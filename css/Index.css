@@ -17,7 +17,7 @@
 body {
   background: radial-gradient(circle at 10% 10%, rgba(122,242,182,0.02), transparent 40%),
               linear-gradient(180deg,#071023 0%, #061425 100%);
-  color:#e6f0f2;
+  color:#071023;
   line-height: 1.6;
 }
 
@@ -32,7 +32,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px; /* réduit un peu */
-  background-color: #fff;
+  background-color: #071023;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   flex-wrap: wrap;
 }
@@ -171,16 +171,16 @@ a {
 /* ====== BULLE MUSIQUE ====== */
 .music-bubble {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #7AF2B6; /* Vert */
+  border-radius: 50%;
   width: 50px; /* réduit */
   height: 50px; /* réduit */
-  border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
-  background-color: #7AF2B6;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   z-index: 9999;
 }
@@ -216,4 +216,5 @@ a {
     justify-content: space-between;
   }
 }
+
 
