@@ -30,94 +30,94 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 15px; /* réduit un peu */
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   flex-wrap: wrap;
 }
 
 .brand h1 {
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* un peu plus petit */
 }
 
 .brand .subtitle {
-  font-size: 1rem;
+  font-size: 0.85rem; /* réduit */
   color: #666;
 }
 
 .meta {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
 }
 
 .meta .location {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #666;
 }
 
 .meta .lang button {
-  padding: 5px 10px;
+  padding: 4px 8px; /* réduit */
   border: none;
-  background-color: #7AF2B6;
-  color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 0.8rem;
 }
 
 .meta .lang button.active {
-  background-color: #5fc58a;
+  font-size: 0.85rem;
 }
 
 /* ====== HERO ====== */
 .hero {
   display: flex;
-  flex-direction: column; /* mobile en colonne */
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 20px;
-  padding: 40px 20px;
+  gap: 15px;
+  padding: 30px 15px;
 }
 
 .card {
   background: #fff;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px; /* réduit */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 350px; /* réduit */
   text-align: center;
 }
 
 .card h3 {
-  margin-bottom: 10px;
+  font-size: 1rem; /* réduit */
+  margin-bottom: 8px;
 }
 
 .avatar-container {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .avatar {
-  width: 150px;
-  height: 150px;
+  width: 120px; /* réduit */
+  height: 120px; /* réduit */
   border-radius: 50%;
   object-fit: cover;
 }
 
 .intro {
-  max-width: 600px;
+  max-width: 500px; /* réduit */
   text-align: center;
 }
 
 .intro h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 1.2rem; /* réduit */
+  margin-bottom: 10px;
 }
 
 .intro p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* réduit */
   color: #555;
 }
 
@@ -125,53 +125,46 @@ a {
 .content-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .left-col, .right-col {
   flex: 1;
-  min-width: 250px;
-  max-width: 400px;
+  min-width: 220px; /* réduit */
+  max-width: 350px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* ====== CARDS ====== */
-.card h3 {
-  margin-bottom: 10px;
+  gap: 8px;
 }
 
 /* ====== BOUTON “Recrutez Moi” ====== */
 #green {
-  background-color: #7AF2B6;
-  color: #fff;
   text-align: center;
-  padding: 15px;
+  padding: 12px; /* réduit */
   border-radius: 12px;
   display: block;
-  max-width: 400px;
-  margin: 20px auto;
+  max-width: 350px; /* réduit */
+  margin: 15px auto;
   font-weight: bold;
+  font-size: 0.95rem;
 }
 
 /* ====== BULLE MUSIQUE ====== */
 .music-bubble {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #7AF2B6;
+  bottom: 15px;
+  right: 15px;
+  width: 50px; /* réduit */
+  height: 50px; /* réduit */
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,29 +173,29 @@ a {
 
 .equalizer span {
   display: inline-block;
-  width: 4px;
-  height: 10px;
+  width: 3px; /* réduit */
+  height: 8px; /* réduit */
   margin: 0 1px;
-  background-color: #fff;
   animation: bounce 0.5s infinite alternate;
 }
 
 @keyframes bounce {
-  0% { height: 10px; }
-  100% { height: 20px; }
+  0% { height: 8px; }
+  100% { height: 16px; }
 }
 
 /* ====== MEDIA QUERY ====== */
 @media (min-width: 768px) {
   .hero {
-    flex-direction: row; /* texte à gauche, avatar à droite */
+    flex-direction: row;
     align-items: center;
     text-align: left;
+    gap: 20px;
   }
 
   .intro {
     text-align: left;
-    margin-left: 20px;
+    margin-left: 15px;
   }
 
   .content-row {
