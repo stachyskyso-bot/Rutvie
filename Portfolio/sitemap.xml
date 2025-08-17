@@ -2,39 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://rutvie.com/Index.html</loc>
+    <loc>https://rutvie.fr/Index.html</loc>
     <lastmod>2025-08-16</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://rutvie.com/ContactezMoi.html</loc>
+    <loc>https://rutvie.fr/ContactezMoi.html</loc>
     <lastmod>2025-08-16</lastmod>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://rutvie.com/Competences.html</loc>
+    <loc>https://rutvie.fr/Competences.html</loc>
     <lastmod>2025-08-16</lastmod>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://rutvie.com/Formation.html</loc>
+    <loc>https://rutvie.fr/Formation.html</loc>
     <lastmod>2025-08-16</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://rutvie.com/Experience.html</loc>
+    <loc>https://rutvie.fr/Experience.html</loc>
     <lastmod>2025-08-16</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://rutvie.com/Project.html</loc>
+    <loc>https://rutvie.fr/Project.html</loc>
     <lastmod>2025-08-16</lastmod>
     <priority>0.7</priority>
   </url>
 
 </urlset>
+
