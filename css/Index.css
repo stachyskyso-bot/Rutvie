@@ -15,8 +15,9 @@
 }
 
 body {
-  background-color: #f8f8f8;
-  color: #333;
+  background: radial-gradient(circle at 10% 10%, rgba(122,242,182,0.02), transparent 40%),
+              linear-gradient(180deg,#071023 0%, #061425 100%);
+  color:#e6f0f2;
   line-height: 1.6;
 }
 
@@ -79,15 +80,18 @@ a {
 }
 
 .card {
-  background: #fff;
-  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.02);
+  transition: background-color 0.3s ease;
   padding: 15px; /* réduit */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 350px; /* réduit */
   text-align: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
 }
-
+.card:hover:not(#green) {
+  background-color: #7AF2B6;
+}
 .card h3 {
   font-size: 1rem; /* réduit */
   margin-bottom: 8px;
@@ -147,7 +151,7 @@ a {
 
 /* ====== BOUTON “Recrutez Moi” ====== */
 #green {
-  text-align: center;
+  
   padding: 12px; /* réduit */
   border-radius: 12px;
   display: block;
@@ -155,6 +159,13 @@ a {
   margin: 15px auto;
   font-weight: bold;
   font-size: 0.95rem;
+  
+  background-color: #7AF2B6;
+  
+  justify-content: center;
+  align-items: center;
+  border: none; /* optionnel, si tu veux */
+}
 }
 
 /* ====== BULLE MUSIQUE ====== */
@@ -169,6 +180,9 @@ a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: #7AF2B6;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
 }
 
 .equalizer span {
@@ -202,3 +216,4 @@ a {
     justify-content: space-between;
   }
 }
+
