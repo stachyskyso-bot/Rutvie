@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- SEO classique -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Contactez Ruth Ngouolali, coordinatrice logistique & supply chain. Discutons de vos projets et opportunités de collaboration.">
+
+<!-- Open Graph pour réseaux sociaux -->
+<meta property="og:title" content="Contact - Portfolio Ruth Ngouolali">
+<meta property="og:description" content="Contactez-moi afin de travailler ensemble sur vos projets en supply chain, logistique et coordination.">
+<meta property="og:image" content="Photo/Moi.jpg">
+<meta property="og:url" content="https://rutvie.fr/ContactezMoi.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+
+<!-- LinkedIn (reprend OG) -->
+<meta property="og:linkedin" content="https://www.linkedin.com/in/ruth-ngouolali-b8a1a8321/" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact - Portfolio Ruth Ngouolali">
+<meta name="twitter:description" content="Contactez-moi pour discuter de vos projets logistiques et supply chain.">
+<meta name="twitter:image" content="Photo/Moi.jpg">
+
+<title>Contact - Ruth Ngouolali | Portfolio Supply Chain</title>
+<link rel="stylesheet" href="css/Contacte.css" /> 
+<link rel="icon" type="image/png" href="Photo/favicon.png"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+<button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- MENU LATÉRAL -->
+<nav id="navLinks" class="nav-links" aria-hidden="true"> 
+  <a href="Index.html">Home</a>
+  <a href="ContactezMoi.html">Contact</a>
+  <a href="competences.html">Compétences</a>
+  <a href="formation.html">Formation</a>
+  <a href="experience.html">Expérience</a>
+  <a href="Project.html">Projets</a>
+</nav>
+
+<!-- ===== SECTION CONTACT ===== -->
+<section class="contact-section">
+  <div class="contact-container">
+    <!-- Avatar -->
+    <div class="contact-avatar">
+      <img src="Photo/Profil.png" alt="Mon Avatar">
+    </div>
+
+    <!-- Bio -->
+    <div class="contact-info">
+      <h2>Contactez-moi </h2>
+      <p>Intéressé par mon profil ou souhaitez en savoir plus sur mon parcours ? 
+      N’hésitez pas à me contacter, je serais ravie d'échanger avec vous.</p>
+
+      <div class="contact-links">
+        <a href="mailto:teviengouolali@gmail.com" class="contact-icon email"></a>
+        <a href="tel:+33758882588" class="contact-icon phone"></a>
+        <a href="https://www.linkedin.com/in/tonprofil" target="_blank" class="contact-icon linkedin"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Infos contact -->
+<section class="contact-section">
+  <h2>Contactez-moi </h2>
+  <div class="contact-cards">
+    <a href="tel:+33758882588" class="contact-card">
+      <i class="fas fa-phone-alt"></i>
+      <span>(+33) 7 58 88 25 88</span>
+    </a>
+    <a href="mailto:teviengouolali@gmail.com" class="contact-card">
+      <i class="fas fa-envelope"></i>
+      <span>teviengouolali@gmail.com</span>
+    </a>
+    <a href="https://www.linkedin.com/in/ruth-ngouolali-b8a1a8321" target="_blank" class="contact-card">
+      <i class="fab fa-linkedin"></i>
+      <span>Mon LinkedIn</span>
+    </a>
+  </div>
+</section>
+
+<script>
+
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('navLinks');
+
+  function openMenu() {
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+    nav.classList.add('open');
+    nav.setAttribute('aria-hidden','false');
+  }
+  function closeMenu() {
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    nav.classList.remove('open');
+    nav.setAttribute('aria-hidden','true');
+  }
+  burger.addEventListener('click', () => {
+    nav.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // fermer si on clique en dehors du menu
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+
+  // fermer avec Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu();
+  });
+
+</script>
+
+
+</body>
+</html>
