@@ -1,40 +1,30 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <!-- Encodage et responsive -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<!-- SEO -->
-<title>Portfolio Ruth Ngouolali</title>
-<meta name="description" content="Découvrez le portfolio de Ruth Ngouolali, coordinatrice logistique et supply chain. Expériences, projets, compétences et parcours académique." />
-<meta name="robots" content="index, follow" />
-<meta property="og:url" content="https://rutvie.fr/index.html">
+  <!-- SEO -->
+  <title>Portfolio Ruth Ngouolali</title>
+  <meta name="description" content="Découvrez le portfolio de Ruth Ngouolali, coordinatrice logistique et supply chain. Expériences, projets, compétences et parcours académique." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Portfolio Ruth Ngouolali" />
+  <meta property="og:description" content="Coordinatrice Logistique & Supply Chain - Mes projets et expériences" />
+  <meta property="og:image" content="https://rutvie.fr/Photo/Moi.jpg" />
+  <meta property="og:url" content="https://rutvie.fr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="theme-color" content="#7AF2B6" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Photo/favicon.png">
 
-<!-- Couleur du thème navigateur -->
-<meta name="theme-color" content="#7AF2B6" />
-
-<!-- Open Graph (Facebook, LinkedIn, etc.) -->
-<meta property="og:title" content="Portfolio Ruth Ngouolali" />
-<meta property="og:description" content="Coordinatrice Logistique & Supply Chain - Mes projets et expériences" />
-<meta property="og:image" content="https://rutvie.fr/Photo/Moi.jpg" />
-<meta property="og:url" content="https://www.linkedin.com/in/ruth-ngouolali-b8a1a8321/" />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="fr_FR" />
-
-
-
-<!-- Favicon (icône de l'onglet) -->
-<link rel="icon" type="image/png" href="Photo/favicon.png">
-
-
-
-
+  <!-- Styles -->
   <link rel="stylesheet" href="css/Index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
- <script type="application/ld+json">
+  <!-- JSON-LD (données structurées SEO) -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -47,8 +37,6 @@
     ]
   }
   </script>
-
-  
 </head>
 <body>
   <header class="topbar">
@@ -61,50 +49,41 @@
       <div class="lang"><button id="fr" class="active">FR</button></div>
     </nav>
   </header>
- <!-- Bulle musique -->
-<div class="music-bubble" id="music-bubble">
-  <div class="music-icon" id="music-icon">🎵</div>
-  <div class="equalizer" id="equalizer" style="display: none;">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
 
-<!-- Audio -->
-<audio id="bg-music" loop>
-  <source src="Musique/Ost.mp4" type="audio/mpeg">
-</audio>
+  <!-- Bulle musique -->
+  <div class="music-bubble" id="music-bubble">
+    <div class="music-icon" id="music-icon">🎵</div>
+    <div class="equalizer" id="equalizer" style="display:none;">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <audio id="bg-music" loop>
+    <source src="Musique/Ost.mp4" type="audio/mpeg">
+  </audio>
+
   <main class="container">
     <section class="hero">
       <div class="card">
         <h3>Ruth Ngouolali</h3>
         <ul id="education"></ul>
-        
-        <!-- Avatar -->
         <div class="avatar-container">
           <img src="Photo/Profil.png" alt="Mon Avatar" class="avatar">
         </div>
       </div>
-      </div>
 
       <div class="intro">
         <h2 id="role">Achat et Supply Chain</h2>
-        <p id="tagline">Rigoureuse et organisée, je coordonne les opérations logistiques, transport et douane pour optimiser les flux et réduire les coûts. Mon objectif : allier performance opérationnelle et satisfaction client.</p>
+        <p id="tagline"></p>
       </div>
     </section>
 
     <section class="content-row">
       <aside class="left-col">
-        <a href = "Competences.html" class="card">
+        <a href="Competences.html" class="card">
           <h3>Compétences</h3>
           <div id="skills-list" class="skills-list"></div>
         </a>
-
-        <a href = "ContactezMoi.html" class="card">
-          <h3>Contact</h3>
-        </a>
-      
+        <a href="ContactezMoi.html" class="card"><h3>Contact</h3></a>
       </aside>
 
       <section class="right-col">
@@ -112,24 +91,23 @@
           <h3>Expériences</h3>
           <div id="experiences"></div>
         </a>
-
         <a class="card" href="Formation.html">
-          <h3 href>Formation</h3>
-          <ul id="education"></ul>
+          <h3>Formation</h3>
+          <ul id="education-list"></ul>
         </a>
-
         <a href="Project.html" class="card">
           <h3>Projets & Réalisations</h3>
           <div id="projects"></div>
         </a>
-
       </section>
-      <a class="card" href="cv/CV Assistante Supply Chain.pdf" id = "green" ><h3>Recrutez Moi</h3></a>
+
+      <a class="card" href="cv/CV Assistante Supply Chain.pdf" id="green">
+        <h3>Recrutez Moi</h3>
+      </a>
     </section>
   </main>
-  
-  
+
+  <!-- Scripts -->
   <script src="js/Index.js"></script>
 </body>
 </html>
-
