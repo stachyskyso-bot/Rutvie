@@ -91,13 +91,3 @@ const bubble = document.getElementById("music-bubble");
 
   });
 
-
-"@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ruth Ngouolali",
-  "jobTitle": "Coordinatrice logistique & supply chain",
-  "url": "https://rutvie.fr/",
-  "sameAs": [
-    "https://www.linkedin.com/in/ruth-ngouolali-b8a1a8321",
-    "mailto:teviengouolali@gmail.com"
-  ]
