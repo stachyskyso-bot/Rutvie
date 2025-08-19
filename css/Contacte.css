@@ -232,97 +232,104 @@ body {
 /* petit responsive : réduire largeur sur petits écrans */
 /* ===== VERSION COMPACTE MOBILE ===== */
 /* ===== VERSION MOBILE AVEC ORDRE OPTIMISÉ ===== */
-@media (max-width: 480px) {
-  /* Topbar */
-  .topbar {
+/* === TABLETTE (max 768px) === */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .contact-container {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 8px 12px;
+    text-align: center;
+    gap: 15px;
   }
 
-  .brand h1 {
-    font-size: 1rem;
+  .contact-avatar img {
+    width: 120px;
+    height: 120px;
   }
 
-  .brand .subtitle {
-    font-size: 0.8rem;
+  .contact-info h2 {
+    font-size: 1.3rem;
   }
 
-  .meta {
-    margin-top: 4px;
-    font-size: 0.75rem;
+  .contact-info p {
+    font-size: 0.95rem;
   }
 
-  /* Section Hero */
-  .hero {
+  .contact-links {
+    justify-content: center;
+  }
+
+  .contact-cards {
     flex-direction: column;
     align-items: center;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
     text-align: center;
-    gap: 10px;
   }
 
-  .avatar {
-    width: 90px;
-    height: 90px;
+  /* menu latéral prend moins de place */
+  .nav-links {
+    width: 220px;
+  }
+}
+
+/* === MOBILE (max 480px) === */
+@media (max-width: 480px) {
+  body {
+    padding: 15px 8px;
   }
 
-  .intro h2 {
-    font-size: 1rem;
+  .contact-container {
+    flex-direction: column;
+    padding: 15px;
   }
 
-  .intro p {
-    font-size: 0.8rem;
+  .contact-avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
     padding: 0 5px;
   }
 
-  /* Content réorganisé */
-  .content-row {
-    display: flex;
-    flex-direction: column;  /* une seule colonne */
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
+  .contact-links {
+    gap: 10px;
   }
 
-  /* Chaque bloc occupe toute la largeur */
-  .left-col, 
-  .right-col {
-    display: flex;
-    flex-direction: column;
+  .contact-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-cards {
     gap: 12px;
-    width: 100%;
+  }
+
+  .contact-card {
+    font-size: 0.9rem;
+    padding: 12px 14px;
     max-width: 320px;
   }
 
-  .card {
-    padding: 12px;
-    font-size: 0.9rem;
+  .contact-card i {
+    font-size: 18px;
   }
 
-  .card h3 {
-    font-size: 1rem;
-  }
-
-  /* Bouton Recrutez Moi en bas, centré */
-  #green {
-    align-self: center;
-    width: 100%;
-    max-width: 320px;
-    font-size: 0.9rem;
-    padding: 12px;
-    text-align: center;
-  }
-
-  /* Musique adaptée */
-  .music-bubble {
-    width: 42px;
-    height: 42px;
-    bottom: 12px;
-    right: 12px;
-  }
-
-  .equalizer span {
-    width: 2px;
-    height: 6px;
+  /* menu latéral encore plus compact */
+  .nav-links {
+    width: 200px;
+    padding-top: 70px;
   }
 }
