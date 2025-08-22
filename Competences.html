@@ -26,247 +26,471 @@
 
 <title>Compétences - Ruth Ngouolali | Portfolio Supply Chain</title>
 <style>
- :root {
-    --green: #4CAF50;
-    --orange: #FF9800;
-    --yellow: #FFEB3B;
-    --red: #F44336;
-    --bg: #0E0E0E;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --text-color: #fff;
-  }
-  }
-  body {
-    background-color: black;
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 30px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  h1 {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  section.category {
-    margin-bottom: 50px;
-  }
-  section.category h2 {
-    border-bottom: 3px solid var(--green);
-    padding-bottom: 8px;
-    margin-bottom: 25px;
-  }
-  .skill {
-    background: var(--card-bg);
-    border-radius: 10px;
-    padding: 15px 20px;
-    margin-bottom: 18px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .skill-name {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-  .progress {
-    width: 100%;
-    height: 12px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-  .progress-bar {
-    height: 100%;
-    width: 0;
-    border-radius: 6px;
-    transition: width 2s ease;
-  }
-  /* Couleurs selon niveau */
-  .green { background: var(--green); }
-  .orange { background: var(--orange); }
-  .yellow { background: var(--yellow); color: black; }
-  .red { background: var(--red); }
-  .description {
-    font-size: 0.9rem;
-    color: #ccc;
-  }
-  /* Effet ripple (vagues liquides) */
-  .ripple {
-    position: absolute;
-    border-radius: 50%;
-    transform: scale(0);
-    animation: ripple-effect 600ms linear;
-    background-color: rgba(255, 255, 255, 0.3);
-    pointer-events: none;
-  }
-  @keyframes ripple-effect {
-    to {
-      transform: scale(4);
+:root {
+      --primary: #2E8B57; /* Vert forêt */
+      --secondary: #3CB371; /* Vert moyen */
+      --accent: #7AF2B6; /* Vert pastel */
+      --dark: #0E2A1C; /* Vert foncé */
+      --light: #F1F8F5; /* Vert très clair */
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --text-color: #e6f0f2;
+      --bg: #071023;
+    }
+    
+    body {
+      background: var(--bg);
+      color: var(--text-color);
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--accent);
+      font-size: 2.2rem;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+    
+    section.category {
+      margin-bottom: 50px;
+      background: rgba(11, 22, 34, 0.6);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(122, 242, 182, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    section.category::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: 0.7;
+    }
+    
+    section.category h2 {
+      color: var(--accent);
+      padding-bottom: 8px;
+      margin-bottom: 25px;
+      font-size: 1.6rem;
+      border-bottom: 1px solid rgba(122, 242, 182, 0.2);
+    }
+    
+    .skill {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(122, 242, 182, 0.05);
+    }
+    
+    .skill:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(46, 139, 87, 0.15);
+      border-color: rgba(122, 242, 182, 0.2);
+      background: rgba(122, 242, 182, 0.05);
+    }
+    
+    .skill-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .skill-level {
+      font-size: 0.9rem;
+      color: var(--secondary);
+    }
+    
+    .progress {
+      width: 100%;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      border-radius: 10px;
+      transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .progress-bar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+      );
+      z-index: 1;
+      background-size: 15px 15px;
+      animation: move 2s linear infinite;
+      border-radius: 10px;
+    }
+    
+    @keyframes move {
+      0% { background-position: 0 0; }
+      100% { background-position: 15px 15px; }
+    }
+    
+    /* Couleurs selon niveau */
+    .green { background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+    .orange { background: linear-gradient(90deg, #FF9800, #FFB74D); }
+    .yellow { background: linear-gradient(90deg, #FFC107, #FFD54F); color: #333; }
+    .red { background: linear-gradient(90deg, #F44336, #E57373); }
+    
+    .description {
+      font-size: 0.95rem;
+      color: #9aa7b2;
+      line-height: 1.5;
+    }
+    
+    /* Effet ripple (vagues liquides) */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple-effect 0.8s linear;
+      background-color: rgba(122, 242, 182, 0.3);
+      pointer-events: none;
+    }
+    
+    @keyframes ripple-effect {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    
+    /* Feuilles décoratives */
+    .leaf {
+      position: absolute;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    
+    .leaf-1 {
+      top: 20px;
+      right: 20px;
+      font-size: 40px;
+      transform: rotate(15deg);
+    }
+    
+    .leaf-2 {
+      bottom: 30px;
+      left: 25px;
+      font-size: 35px;
+      transform: rotate(-20deg);
+    }
+    
+    /* Animation d'entrée */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate {
+      animation: fadeInUp 0.8s ease forwards;
       opacity: 0;
     }
-  }
-
-
-/* Menu latéral */
-  .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #222;
-    overflow-x: hidden;
-    transition: 0.4s;
-    padding-top: 60px;
-    z-index: 999;
-  }
-
-  .sidebar a {
-    padding: 12px 20px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .sidebar a:hover {
-    background-color: #575757;
-  }
-
-  /* Bouton pour fermer */
-  .sidebar .closebtn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-  }
-
-  /* Icône hamburger */
-  .openbtn {
-    font-size: 24px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #222;
-    padding: 10px 15px;
-    border: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-  }
-
-  .openbtn:hover {
-    color: #575757;
-  }
+    
+    /* Menu latéral */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(14, 42, 28, 0.95);
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+    }
+    
+    .sidebar a {
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: var(--light);
+      display: block;
+      transition: 0.3s;
+      border-left: 3px solid transparent;
+    }
+    
+    .sidebar a:hover {
+      background-color: rgba(122, 242, 182, 0.1);
+      border-left: 3px solid var(--accent);
+      padding-left: 30px;
+    }
+    
+    /* Bouton pour fermer */
+    .sidebar .closebtn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+    
+    /* Icône hamburger */
+    .openbtn {
+      font-size: 24px;
+      cursor: pointer;
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1000;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .openbtn:hover {
+      background-color: var(--secondary);
+      transform: rotate(90deg);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      section.category {
+        padding: 20px 15px;
+      }
+      
+      .skill-name {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .skill-level {
+        margin-top: 5px;
+      }
+    }
 </style>
 </head>
 <body>
 
-<h1>Mes Compétences</h1>
-
-<!-- Bouton hamburger -->
-<button class="openbtn" onclick="openNav()">☰</button>
-
-<!-- Menu latéral -->
-<div id="mySidebar" class="sidebar">
-  <span class="closebtn" onclick="closeNav()">×</span>
-  <a href="index.html">Home</a>
-  <a href="ContactezMoi.html">Contact</a>
-  <a href="Competences.html">Compétences</a>
-  <a href="Formation.html">Formation</a>
-  <a href="Experience.html">Expérience</a>
-  <a href="Project.html">Projets</a>
-</div>
-
-
-  <h2>Langues</h2>
-  <div class="skill" data-width="100">
-    <div class="skill-name">Français</div>
-    <div class="progress"><div class="progress-bar green"></div></div>
-    <div class="description">Maîtrise parfaite à l'oral et à l'écrit.</div>
+<h1 class="animate">Mes Compétences</h1>
+  
+  <!-- Bouton hamburger -->
+  <button class="openbtn" onclick="openNav()">☰</button>
+  
+  <!-- Menu latéral -->
+  <div id="mySidebar" class="sidebar">
+    <span class="closebtn" onclick="closeNav()">×</span>
+    <a href="index.html">Accueil</a>
+    <a href="ContactezMoi.html">Contact</a>
+    <a href="Competences.html">Compétences</a>
+    <a href="Formation.html">Formation</a>
+    <a href="Experience.html">Expérience</a>
+    <a href="Project.html">Projets</a>
   </div>
-  <div class="skill" data-width="80">
-    <div class="skill-name">Lingala</div>
-    <div class="progress"><div class="progress-bar orange"></div></div>
-    <div class="description">Langue maternelle, langue parlée couramment, très bonne compréhension.</div>
-  </div>
-  <div class="skill" data-width="60">
-    <div class="skill-name">Anglais</div>
-    <div class="progress"><div class="progress-bar yellow"></div></div>
-    <div class="description">Niveau intermédiaire, capable de tenir une conversation et lire des documents.</div>
-  </div>
-</section>
-
-<section class="category">
-  <h2>Bureautique (Pack Windows)</h2>
-  <div class="skill" data-width="95">
-    <div class="skill-name">Excel</div>
-    <div class="progress"><div class="progress-bar green"></div></div>
-    <div class="description">Maîtrise avancée des fonctions, tableaux croisés dynamiques, macros simples.</div>
-  </div>
-  <div class="skill" data-width="90">
-    <div class="skill-name">Word</div>
-    <div class="progress"><div class="progress-bar green"></div></div>
-    <div class="description">Création et mise en forme de documents professionnels complets.</div>
-  </div>
-  <div class="skill" data-width="75">
-    <div class="skill-name">PowerPoint </div>
-    <div class="progress"><div class="progress-bar orange"></div></div>
-    <div class="description">Conception de présentations claires et attractives avec animations simples.</div>
-  </div>
-  <div class="skill" data-width="50">
-    <div class="skill-name">Outlook </div>
-    <div class="progress"><div class="progress-bar yellow"></div></div>
-    <div class="description">Gestion des mails, calendrier et organisation.</div>
-  </div>
-  <div class="skill" data-width="40">
-    <div class="skill-name">Autres outils bureautiques</div>
-    <div class="progress"><div class="progress-bar red"></div></div>
-    <div class="description">Découverte et apprentissage des outils comme Access, OneNote.</div>
-  </div>
-</section>
-
-<section class="category">
-  <h2>Business</h2>
-  <div class="skill" data-width="65">
-    <div class="skill-name">Business Management </div>
-    <div class="progress"><div class="progress-bar yellow"></div></div>
-    <div class="description">Connaissances théoriques et pratiques en gestion et organisation d'entreprise.</div>
-  </div>
-  <div class="skill" data-width="70">
-    <div class="skill-name">Communication</div>
-    <div class="progress"><div class="progress-bar orange"></div></div>
-    <div class="description">Capacité à transmettre clairement des idées et travailler en équipe.</div>
-  </div>
-  <div class="skill" data-width="55">
-    <div class="skill-name">Gestion de projet</div>
+  
+  <section class="category animate" style="animation-delay: 0.2s">
+    <div class="leaf leaf-1">🌿</div>
+    <div class="leaf leaf-2">🍃</div>
+    <h2>Bureautique (Pack Windows)</h2>
+    
+    <div class="skill" data-width="70">
+      <div class="skill-name">Excel<span class="skill-level">Avancé</span></div>
+      <div class="progress"><div class="progress-bar yellow"></div></div>
+      <div class="description">Maîtrise avancée des fonctions, tableaux croisés dynamiques, macros simples.</div>
+    </div>
+    
+    <div class="skill" data-width="97">
+      <div class="skill-name">Word<span class="skill-level">Expert</span></div>
+      <div class="progress"><div class="progress-bar green"></div></div>
+      <div class="description">Création et mise en forme de documents professionnels complets.</div>
+    </div>
+    
+    <div class="skill" data-width="70">
+      <div class="skill-name">PowerPoint<span class="skill-level">Avancé</span></div>
+      <div class="progress"><div class="progress-bar yellow"></div></div>
+      <div class="description">Conception de présentations claires et attractives avec animations simples.</div>
+    </div>
+	<div class="skill" data-width="55">
+      <div class="skill-name">Outlook <span class="skill-level">Intermédiaire</span></div>
+      <div class="progress"><div class="progress-bar orange"></div></div>
+      <div class="description">Gestion des mails, calendrier et organisation.</div>
+    </div>
+	<div class="skill" data-width="50">
+      <div class="skill-name">Autres outils bureautiques<span class="skill-level">Intermédiaire</span></div>
+      <div class="progress"><div class="progress-bar orange"></div></div>
+      <div class="description">Découverte et apprentissage des outils comme Access, OneNote.</div>
+    </div>
+  </section>
+  
+  <section class="category animate" style="animation-delay: 0.4s">
+    <div class="leaf leaf-1">🌱</div>
+    <div class="leaf leaf-2">🌾</div>
+    <h2>Business</h2>
+    
+    <div class="skill" data-width="75">
+      <div class="skill-name">Analyse des projets de recherche <span class="skill-level">Avancé</span></div>
+      <div class="progress"><div class="progress-bar yellow"></div></div>
+      <div class="description">Évaluation critique des méthodologies de recherche en supply chain et analyse des impacts environnementaux des projets.</div>
+    </div>
+    
+    <div class="skill" data-width="50">
+      <div class="skill-name">Business Management<span class="skill-level">Expert</span></div>
+      <div class="progress"><div class="progress-bar orange"></div></div>
+      <div class="description">Connaissances théoriques et pratiques en gestion et organisation d'entreprise.</div>
+    </div>
+    
+    <div class="skill" data-width="65">
+      <div class="skill-name">Communication<span class="skill-level">Avancé</span></div>
+      <div class="progress"><div class="progress-bar orange"></div></div>
+      <div class="description">Capacité à transmettre clairement des idées et travailler en équipe.</div>
+    </div>
+	<div class="skill" data-width="55">
+    <div class="skill-name">Gestion de projet<span class="skill-level">Intermédiaire</span></div>
     <div class="progress"><div class="progress-bar yellow"></div></div>
     <div class="description">Initiation aux méthodes de planification et suivi de projet.</div>
   </div>
-</section>
+  </section>
+  
+  <section class="category animate" style="animation-delay: 0.6s">
+    <div class="leaf leaf-1">🌍</div>
+    <div class="leaf leaf-2">♻️</div>
+    <h2>Langues</h2>
+    
+    <div class="skill" data-width="95">
+      <div class="skill-name">Français <span class="skill-level">Intermédiaire</span></div>
+      <div class="progress"><div class="progress-bar green"></div></div>
+      <div class="description">Maîtrise parfaite à l'oral et à l'écrit.</div>
+    </div>
+    
+    <div class="skill" data-width="70">
+      <div class="skill-name">Lingala <span class="skill-level">Intermédiaire</span></div>
+      <div class="progress"><div class="progress-bar yellow"></div></div>
+      <div class="description">Langue maternelle, langue parlée couramment, très bonne compréhension.</div>
+    </div>
+    
+    <div class="skill" data-width="55">
+      <div class="skill-name">Anglais <span class="skill-level">Intermédiaire</span></div>
+      <div class="progress"><div class="progress-bar orange"></div></div>
+      <div class="description">Niveau intermédiaire, capable de tenir une conversation et lire des documents.</div>
+    </div>
+  </section>
+  
+  <section class="category animate" style="animation-delay: 0.8s">
+    <div class="leaf leaf-1">📚</div>
+    <div class="leaf leaf-2">✍️</div>
+    <h2>Compétences Académiques</h2>
+    
+    <div class="skill" data-width="95">
+      <div class="skill-name">Recherche<span class="skill-level">Expert</span></div>
+      <div class="progress"><div class="progress-bar green"></div></div>
+      <div class="description">Méthodologies de recherche en économie, Business et Marketing.</div>
+    </div>
+    
+    <div class="skill" data-width="85">
+      <div class="skill-name">Rédaction académique <span class="skill-level">Avancé</span></div>
+      <div class="progress"><div class="progress-bar green"></div></div>
+      <div class="description">Production d'articles, d'essais et de travaux de recherche dans de l'achat.</div>
+    </div>
+    
+    <div class="skill" data-width="50">
+      <div class="skill-name">Animation de séminaires <span class="skill-level">Intermédiaire</span></div>
+      <div class="progress"><div class="progress-bar orange"></div></div>
+      <div class="description">Facilitation de discussions et débats sur des questions environnementales complexes.</div>
+    </div>
+  </section>
+</div>
 
 
 <script>
   // Animation progressive des barres au chargement
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.skill').forEach(skill => {
-      const bar = skill.querySelector('.progress-bar');
-      const width = skill.getAttribute('data-width');
-      // Delay progress bar fill by index for effet cascade
-      setTimeout(() => {
-        bar.style.width = width + '%';
-      }, 200);
+  document.addEventListener('DOMContentLoaded', () => {
+    // Animation des éléments
+    const animateElements = document.querySelectorAll('.animate');
+    animateElements.forEach((el, index) => {
+      el.style.animationDelay = `${index * 0.2}s`;
     });
+    
+    // Animation des barres de progression
+    setTimeout(() => {
+      document.querySelectorAll('.skill').forEach((skill, index) => {
+        const bar = skill.querySelector('.progress-bar');
+        const width = skill.getAttribute('data-width');
+        setTimeout(() => {
+          bar.style.width = width + '%';
+        }, index * 150);
+      });
+    }, 800);
   });
-
+  
   // Effet ripple (vague liquide) au clic sur compétence
   document.querySelectorAll('.skill').forEach(skill => {
     skill.addEventListener('click', function(e) {
@@ -280,22 +504,23 @@
       this.appendChild(ripple);
       setTimeout(() => {
         ripple.remove();
-      }, 600);
+      }, 800);
     });
   });
-
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-}
+  
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
 
 </script>
 
 </body>
 </html>
+
 
 
 
